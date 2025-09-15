@@ -1,28 +1,31 @@
-import java.util.ArrayList;
+
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.Scanner;
-//
-public class Main{
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        StringBuilder sb = new StringBuilder(); // StringBuilder 선언, 시간초과 방지
 
-        int N = sc.nextInt();
-        ArrayList<Integer> number = new ArrayList<>();
+public class Main {
+    // 수 정렬하기 2
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
 
-        for(int i=0; i<N; i++){
-            number.add(sc.nextInt());
+        int N = Integer.parseInt(br.readLine());
+        int arr[] = new int[N];
+        int num;
+
+        for(int i = 0; i < N; i++){
+            num = Integer.parseInt(br.readLine());
+            arr[i] = num;
         }
 
+        Arrays.sort(arr);
 
-        Collections.sort(number);
-
-        for(int value : number){
-            sb.append(value).append('\n');
+        for(int i = 0; i < N; i++){
+            sb.append(arr[i]).append("\n");
         }
 
         System.out.println(sb);
-
     }
 }
